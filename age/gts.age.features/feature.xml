@@ -2,7 +2,7 @@
 <feature
       id="gts.age.features"
       label="AGE Plugins"
-      version="0.4.0"
+      version="0.4.0.qualifier"
       provider-name="gts.inf.um.es">
 
    <description url="http://gts.inf.um.es/age">

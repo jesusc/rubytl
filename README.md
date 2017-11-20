@@ -17,7 +17,10 @@ To install AGE use the update site:
 
   * http://sanchezcuadrado.es/projects/rubytl/updatesite 
 
-There are only two requisites, the Java and Ruby runtimes must be installed. 
+Tested with:
+
+  * Ruby 2.1
+  * Eclipse Mars
 
 ### Configuration
 

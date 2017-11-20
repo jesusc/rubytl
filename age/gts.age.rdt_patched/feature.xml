@@ -2,7 +2,7 @@
 <feature
       id="gts.age.rdt_patched"
       label="RDT Patched for AGE"
-      version="0.9.1"
+      version="0.9.1.qualifier"
       provider-name="RubyPeople + GTS">
 
    <description url="http://www.example.com/description">
