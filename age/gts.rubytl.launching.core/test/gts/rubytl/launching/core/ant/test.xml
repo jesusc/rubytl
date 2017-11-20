@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<project name="TestTask" default="main" basedir=".">
+
+  <target name="declare">
+    <taskdef name="rubytl.rakefile"
+        classname="gts.rubytl.launching.core.ant.RakefileTask"
+        classpath="/home/jesus/usr/eclipse-age-dev-3.3/workspace/gts.rubytl.launching.core/bin"/>
+  </target>
+
+  <target name="main" depends="declare">
+    <rubytl.rakefile ruby="ruby" rubytl="/home/jesus/usr/dltk/workspace/rubytl" >
+        <raketask name="test"  />
+        <project  path="../data"  />
+		<rakefile path="test.rakefile" />		
+    </rubytl.rakefile>
+  </target>
+</project>

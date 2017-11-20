@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JRuby Integration
+Bundle-SymbolicName: gts.age.jruby;singleton:=true
+Bundle-Version: 0.4.0
+Bundle-Activator: gts.age.jruby.Activator
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime
+Eclipse-LazyStart: true
+Export-Package: gts.age.jruby.integration
+Bundle-ClassPath: lib/bsf.jar,
+ lib/jruby.jar,
+ .,
+ lib/asm-2.2.3.jar,
+ lib/asm-commons-2.2.3.jar

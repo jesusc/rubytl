@@ -1,0 +1,3 @@
+begin=90
+end=141
+expected=CallNode, CallNode, Colon2Node, ConstNode, ArrayNode, Colon2Node, Colon2Node, ConstNode

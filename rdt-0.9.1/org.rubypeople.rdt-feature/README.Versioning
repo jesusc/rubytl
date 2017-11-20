@@ -1,0 +1,29 @@
+There following steps are required for updating the feature version. 
+
+1) feature.xml
+Change the version of the rdt feature to the new version number. 
+Change the version numbers of all contained rdt plugins to the new version number
+
+2) unit-tests-feature/feature.xml
+Change the version of the rdt tests feature to the new version number. 
+Change the version numbers of the contained rdt tests plugins to the new version number.
+
+3) org.rubypeople.*/plugin.xml
+Update the version number in the plugin.xml of all rdt plugins and test plugins. The Feature 
+Manifest Editor has a Versions... button, which is supposed to make the updating of version 
+numbers less errrorprone. Unfortunately, it rarely works. Nervertheless you can try your luck 
+with the Versions... button and "Force versions defined in the feature into plug-in and fragment 
+manifests".
+
+4) org.rubypeople.rdt.doc.user
+Because this plugin also generates the plugin.xml when the eclipse doc is generated, it needs to know about
+the version number. Modify the featureVersion property in build.xml.
+
+5) org.rubypeople.rdt.build/bootstrap/build.properties
+In order to allow headless build, set the following properties:
+featureVersion
+baseFeatureVersion
+nightlyBuildFeatureVersionPrefix
+
+6) org.rubypeople.updatesite/site.xml
+add an feature entry to site.xml

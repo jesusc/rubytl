@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.rubypeople.rdt.tests.all"
+   name="RDT All Tests"
+   version="0.0.0">
+
+   <runtime>
+      <library name="rdttestsall.jar"/>
+   </runtime>
+
+   <requires>
+      <import plugin="org.junit"/>
+      <import plugin="org.rubypeople.rdt.debug.ui.tests"/>
+      <import plugin="org.rubypeople.rdt.core.tests"/>
+      <import plugin="org.rubypeople.rdt.launching.tests"/>
+      <import plugin="org.rubypeople.rdt.debug.core.tests"/>
+      <import plugin="org.rubypeople.rdt.ui.tests"/>
+      <import plugin="com.aptana.rdt.tests"/>
+      <import plugin="org.rubypeople.rdt.refactoring.tests"/>
+   </requires>
+
+</plugin>

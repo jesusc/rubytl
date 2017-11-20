@@ -1,0 +1,9 @@
+
+main do
+  compose_file 'testfile' do
+    println "This is a test"
+    ClassM::Class.all_objects.each do |klass|
+  	  println "There is a class named #{klass.name}"
+    end
+  end
+end  

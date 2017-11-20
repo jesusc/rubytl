@@ -1,0 +1,134 @@
+<project name="Generated">
+  <target name="fetch.svn.all">
+    <antcall target="svn.co">
+      <param name="target" value="features"/>
+      <param name="element.id" value="org.rubypeople.rdt"/>
+      <param name="project.name" value="org.rubypeople.rdt-feature"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.kxml2"/>
+      <param name="project.name" value="org.kxml2"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.doc.user"/>
+      <param name="project.name" value="org.rubypeople.rdt.doc.user"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.epic.regexp"/>
+      <param name="project.name" value="org.epic.regexp"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.ui"/>
+      <param name="project.name" value="org.rubypeople.rdt.ui"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt"/>
+      <param name="project.name" value="org.rubypeople.rdt"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.testunit"/>
+      <param name="project.name" value="org.rubypeople.rdt.testunit"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.launching"/>
+      <param name="project.name" value="org.rubypeople.rdt.launching"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.debug.ui"/>
+      <param name="project.name" value="org.rubypeople.rdt.debug.ui"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.debug.core"/>
+      <param name="project.name" value="org.rubypeople.rdt.debug.core"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.core"/>
+      <param name="project.name" value="org.rubypeople.rdt.core"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.jruby"/>
+      <param name="project.name" value="org.jruby"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.refactoring"/>
+      <param name="project.name" value="org.rubypeople.rdt.refactoring"/>
+    </antcall>
+  	<antcall target="svn.co">
+  	  <param name="target" value="plugins"/>
+  	  <param name="element.id" value="com.aptana.rdt"/>
+  	  <param name="project.name" value="com.aptana.rdt"/>
+  	</antcall>
+  	<antcall target="svn.co">
+  	  <param name="target" value="plugins"/>
+  	  <param name="element.id" value="com.aptana.rdt.ui"/>
+  	  <param name="project.name" value="com.aptana.rdt.ui"/>
+  	</antcall>
+    <antcall target="svn.co">
+      <param name="target" value="features"/>
+      <param name="element.id" value="org.rubypeople.rdt-tests"/>
+      <param name="project.name" value="org.rubypeople.rdt-test-feature"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.eclipse.shams"/>
+      <param name="project.name" value="org.rubypeople.eclipse.shams"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.eclipse.testutils"/>
+      <param name="project.name" value="org.rubypeople.eclipse.testutils"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.core.tests"/>
+      <param name="project.name" value="org.rubypeople.rdt.core.tests"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.debug.core.tests"/>
+      <param name="project.name" value="org.rubypeople.rdt.debug.core.tests"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.debug.ui.tests"/>
+      <param name="project.name" value="org.rubypeople.rdt.debug.ui.tests"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.launching.tests"/>
+      <param name="project.name" value="org.rubypeople.rdt.launching.tests"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.tests.all"/>
+      <param name="project.name" value="org.rubypeople.rdt.tests.all"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.ui.tests"/>
+      <param name="project.name" value="org.rubypeople.rdt.ui.tests"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.rubypeople.rdt.refactoring.tests"/>
+      <param name="project.name" value="org.rubypeople.rdt.refactoring.tests"/>
+    </antcall>
+  	<antcall target="svn.co">
+  	  <param name="target" value="plugins"/>
+  	  <param name="element.id" value="com.aptana.rdt.tests"/>
+  	  <param name="project.name" value="com.aptana.rdt.tests"/>
+  	</antcall>
+  </target>
+</project>

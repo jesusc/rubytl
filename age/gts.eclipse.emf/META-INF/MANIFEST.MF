@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Emf Plug-in
+Bundle-SymbolicName: gts.eclipse.emf
+Bundle-Version: 0.4.0
+Bundle-Activator: gts.eclipse.emf.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi
+Eclipse-LazyStart: true
+Export-Package: gts.eclipse.emf.tasks

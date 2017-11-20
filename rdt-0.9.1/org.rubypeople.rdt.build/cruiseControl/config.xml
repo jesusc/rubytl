@@ -1,0 +1,72 @@
+<cruisecontrol>
+	<project name="RDT" buildafterfailed="false">
+		<plugin name="labelincrementer" classname="org.rubypeople.rdt.cruisecontrol.plugin.EclipsePluginLabelProvider"/>
+		<labelincrementer prefix="0.9.0"/>
+		<property name="buildDirectory" value="/home/rdt/build-cc"/>     		
+		<bootstrappers>
+			<svnbootstrapper localworkingcopy="../pluginbuilder"/>
+			<svnbootstrapper localworkingcopy="."/>
+		</bootstrappers>
+
+		<!-- Defines where cruise looks for changes, to decide whether to run the build --> 
+		<modificationset quietperiod="180"> 
+			<svn RepositoryLocation="https://rubyeclipse.svn.sourceforge.net/svnroot/rubyeclipse"/>
+		</modificationset>
+
+		<!-- Configures the actual build loop, how often and which build file/target --> 
+		<schedule interval="60"> 
+            <ant antscript="/home/rdt/cruisecontrol-bin-2.5/apache-ant-1.6.5/bin/ant"
+               antWorkingDir="../pluginbuilder"
+               buildfile="build.xml"
+               target="main-cc"
+               uselogger="true"
+               usedebug="false">
+            	<property name="version" value="0.9.0"/> 
+            	<property name="buildDirectory" value="${buildDirectory}"/>             	
+            </ant> 
+		</schedule>
+
+		<log dir="logs/RDT">
+			<merge dir="${buildDirectory}/results/testresults/xml"/>
+		</log>
+
+		<!-- more recent versions of CC should use the listener below, instead of 	the currentbuildstatusbootstrapper, currentbuildstatuspublisher combination.  NOTE: Must match filename in CC reporting/jsp - override.properties: user.build.status.file -->
+		<listeners>
+			<currentbuildstatuslistener file="logs/RDT/status.txt"/>		
+		</listeners>
+
+		<!-- Publishers are run *after* a build completes -->
+		<publishers> 
+			<onsuccess>		    
+    			<artifactspublisher 
+    				dir="${buildDirectory}/results"
+    				dest="artifacts/RDT"/>
+				<execute command="/home/rdt/cruiseControlWorkspace/purgeNightlyBuildWebSite.sh"/>
+				<scp 
+					sourcedir="${buildDirectory}/results"
+					file="."
+					options="-r"
+					targetuser="mbarchfeld"
+					targethost="www.aptana.org"
+					targetdir="/var/websites/download.rubypeople.org/html/nightly"/>
+				<scp 
+					sourcedir="${buildDirectory}/results/updateSite"
+					file="."
+					options="-r"
+					targetuser="mbarchfeld"
+					targethost="www.aptana.org"
+					targetdir="/var/websites/updatesite.rubypeople.org/html/nightly"/>				
+			</onsuccess>    
+
+			<email 
+				mailhost="mail.sf.net" 
+				returnaddress="mbarchfe@users.sf.net" 
+				buildresultsurl="http://rdtcc.pluginbuilder.org:8080/cruisecontrol/buildresults/RDT"
+				skipusers="true"
+	   			spamwhilebroken="false">
+				<always address="rubyeclipse-build@lists.sourceforge.net"/>
+			</email>    
+		</publishers> 
+	</project> 
+</cruisecontrol>
+

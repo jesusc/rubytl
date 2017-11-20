@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="age_product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="Agile Generative Environment">
+         <property
+               name="aboutText"
+               value="Agile Generative Environment&#x0A;Version: 0.3&#x0A;&#x0A;Author: Jesús Sánchez Cuadrado&#x0A;Visit: http://gts.inf.um.es/age&#x0A;&#x0A;This product has been released under the GPL."/>
+         <property
+               name="appName"
+               value="Agile Generative Environment">
+         </property>
+         <property
+               name="windowImages"
+               value="eclipse.gif,eclipse32.gif,eclipse48.gif,eclipse.png,eclipse32.png">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

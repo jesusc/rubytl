@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+<!-- Default rule -->
+<template context="ruby" 
+          description="%rubytl.default_rule.description" 
+          id="gts.rubytl.default_rule" 
+          name="rule_default">rule '${name}' do
+  from ${source_metaclass}
+  to   ${target_metaclass}
+  mapping do |${source}, ${target}| 
+      ${cursor}
+  end
+end
+</template>
+
+<!-- Top rule -->
+<template context="ruby" 
+          description="%rubytl.top_rule.description" 
+          id="gts.rubytl.top_rule" 
+          name="rule_top">top_rule '${name}' do
+  from ${source_metaclass}
+  to   ${target_metaclass}
+  mapping do |${source}, ${target}| 
+    ${cursor}
+  end
+end
+</template>
+
+<!-- Copy rule -->
+<template context="ruby" 
+          description="%rubytl.copy_rule.description" 
+          id="gts.rubytl.copy_rule" 
+          name="rule_copy">copy_rule '${name}' do
+  from ${source_metaclass}
+  to   ${target_metaclass}
+  mapping do |${source}, ${target}| 
+    ${cursor}
+  end
+end
+</template>
+
+<!-- Model-to-model Rake task -->
+<template context="ruby" 
+          description="%rake.model_to_model.description"
+          id="gts.rubytl.rake.model_to_model_task" 
+          name="model_to_model_task">model_to_model :${task_name} do |t|
+  t.sources :package   => '${source_package}',
+            :metamodel => 'metamodels/${source_metamodel}',
+            :model     => 'models/${source_model}'  
+
+  t.targets :package   => '${target_package}',
+            :metamodel => 'metamodels/${target_metamodel}',
+            :model     => 'models/${target_model}'  
+
+  t.transformation 'transformations/${transformation}'
+  t.plugins :default, :top_rules, :explicit_calls
+  # You can add more plugins...
+  #    :copy_rules, :set_type, :many_to_one, :phases
+end          
+</template>
+
+<!-- Model-to-code Rake task -->
+<template context="ruby" 
+          description="%rake.model_to_code.description"
+          id="gts.rubytl.rake.model_to_code_task" 
+          name="model_to_code_task">model_to_code :${task_name} do |t|  
+  t.sources :package   => '${source_package}',
+            :metamodel => 'metamodels/${source_metamodel}',
+            :model     => 'models/${source_model}'  
+
+  t.codebase = 'generation/' 
+  t.generate  'transformations/${2code_file}'
+end
+</template>
+
+<!-- Validation Rake task -->
+<template context="ruby" 
+          description="%rake.model_to_code.description"
+          id="gts.rubytl.rake.validate_task" 
+          name="validate_task">validate_model :${task_name} do |t|  
+  t.sources :package   => '${source_package}',
+            :metamodel => 'metamodels/${source_metamodel}',
+            :model     => 'models/${source_model}'  
+
+  t.validation_file '${filename}'
+  t.stop_on_error 
+end
+</template>
+
+<!-- Compose file -->
+<template context="ruby" 
+          description="%rgen.compose_file.description"
+          id="gts.rubytl.rgen.compose_file" 
+          name="compose_file">compose_file '#{filename}' do |file|        
+	${metaclass}.all_objects do |obj|
+    	template 'templates/${template_name}.rtemplate' => file, :obj => obj
+	end
+end
+</template>
+
+<template context="ruby" 
+          description="%rake.task_execute_edsl.description"
+          id="gts.rubytl.rake.task_execute_edsl" 
+          name="task_execute_edsl">execute_edsl :${name} do |t|
+  t.targets :package   => '${package}',
+            :metamodel => 'metamodels/${metamodel}',
+            :model     => 'models/${model}'
+  
+  t.dsl_definition 'dsls/${dsl_definition_file}.rb', :language => :low_level
+  t.dsl_filename 'models/${dsl_file}'
+end
+</template>
+
+</templates>

@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RubyTL Launcher
+Bundle-SymbolicName: gts.rubytl.launching; singleton:=true
+Bundle-Version: 0.4.0
+Bundle-Activator: gts.rubytl.launching.LauncherPlugin
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.debug.core,
+ gts.eclipse.core,
+ org.rubypeople.rdt.launching,
+ gts.rubytl.core,
+ gts.age.preferences,
+ org.eclipse.ant.core
+Eclipse-LazyStart: true
+Bundle-ClassPath: rubytl-launching.jar
+Export-Package: gts.rubytl.launching

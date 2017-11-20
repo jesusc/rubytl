@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RubyTL Debug UI Plug-in
+Bundle-SymbolicName: gts.rubytl.debug.ui; singleton:=true
+Bundle-Version: 0.4.0
+Bundle-Activator: gts.rubytl.debug.ui.DebugUIPlugin
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.debug.ui,
+ org.eclipse.debug.core,
+ gts.rubytl.core,
+ gts.rubytl.ui,
+ gts.rubytl.launching,
+ gts.age.jruby,
+ org.rubypeople.rdt.ui,
+ org.eclipse.ui.editors,
+ org.eclipse.jface.text,
+ org.eclipse.ui.workbench.texteditor,
+ org.rubypeople.rdt.core,
+ org.eclipse.core.resources,
+ org.rubypeople.rdt.debug.ui,
+ org.eclipse.ui.console,
+ org.eclipse.ui.ide
+Eclipse-LazyStart: true

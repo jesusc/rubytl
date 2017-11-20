@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RubyTL Core
+Bundle-SymbolicName: gts.rubytl.core; singleton:=true
+Bundle-Version: 0.4.0
+Bundle-Activator: gts.rubytl.core.RubytlCore
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ gts.eclipse.core
+Eclipse-LazyStart: true
+Export-Package: gts.rubytl.core,
+ gts.rubytl.core.i18n,
+ gts.rubytl.core.resources

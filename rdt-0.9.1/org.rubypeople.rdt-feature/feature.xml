@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.rubypeople.rdt"
+      label="%featureName"
+      version="0.0.0"
+      provider-name="%providerName"
+      plugin="org.rubypeople.rdt">
+
+   <description url="%descriptionURL">
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://rubyeclipse.sourceforge.net/updatesite"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui.console"/>
+      <import plugin="org.eclipse.debug.ui"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="org.eclipse.ui.cheatsheets"/>
+      <import plugin="org.eclipse.debug.core"/>
+      <import plugin="org.eclipse.team.core"/>
+      <import plugin="org.eclipse.ui.intro"/>
+      <import plugin="org.eclipse.search"/>
+      <import plugin="org.eclipse.compare"/>
+      <import plugin="org.eclipse.core.filesystem"/>
+      <import plugin="org.eclipse.ltk.core.refactoring"/>
+      <import plugin="com.ibm.icu"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.text"/>
+      <import plugin="org.eclipse.core.variables"/>
+      <import plugin="org.eclipse.ltk.ui.refactoring"/>
+   </requires>
+
+   <plugin
+         id="org.kxml2"
+         download-size="29"
+         install-size="32"
+         version="2.1.4"/>
+
+   <plugin
+         id="org.rubypeople.rdt.doc.user"
+         download-size="341"
+         install-size="341"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.epic.regexp"
+         download-size="43"
+         install-size="51"
+         version="0.1.4"/>
+
+   <plugin
+         id="org.rubypeople.rdt.ui"
+         download-size="1369"
+         install-size="1646"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.rubypeople.rdt"
+         download-size="25"
+         install-size="25"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.rubypeople.rdt.testunit"
+         download-size="124"
+         install-size="151"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.rubypeople.rdt.launching"
+         download-size="88"
+         install-size="123"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.rubypeople.rdt.debug.ui"
+         download-size="104"
+         install-size="132"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.rubypeople.rdt.debug.core"
+         download-size="45"
+         install-size="56"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.rubypeople.rdt.core"
+         download-size="544"
+         install-size="706"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.jruby"
+         download-size="2359"
+         install-size="2359"
+         version="1.0.0.4212p"
+         unpack="false"/>
+
+   <plugin
+         id="org.rubypeople.rdt.refactoring"
+         download-size="427"
+         install-size="427"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.aptana.rdt"
+         download-size="88"
+         install-size="88"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.aptana.rdt.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

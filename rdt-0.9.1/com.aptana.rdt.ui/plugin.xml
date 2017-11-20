@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="org.rubypeople.rdt.ui.RubyBrowsingPerspective">
+         <perspectiveShortcut id="org.radrails.rails.ui.PerspectiveRails"/>
+      </perspectiveExtension>
+      <perspectiveExtension targetID="org.eclipse.debug.ui.DebugPerspective">
+         <perspectiveShortcut id="org.radrails.rails.ui.PerspectiveRails"/>
+      </perspectiveExtension>
+   	 <perspectiveExtension targetID="org.eclipse.ui.resourcePerspective">
+       <perspectiveShortcut id="org.radrails.rails.ui.PerspectiveRails" />
+     </perspectiveExtension>
+     <perspectiveExtension targetID="org.rubypeople.rdt.ui.PerspectiveRuby">
+       <perspectiveShortcut id="org.radrails.rails.ui.PerspectiveRails" />
+     </perspectiveExtension>
+   </extension>
+  <extension
+         point="org.eclipse.ui.views">
+         <view
+            name="Rails API"
+            icon="icons/full/elcl16/rails.gif"
+            category="org.radrails.rails.ui.ViewCategoryRails"
+            class="com.aptana.rdt.internal.ui.infoviews.RailsAPIView"
+            id="com.aptana.rdt.ui.views.RailsAPIView">
+      </view>
+      <view
+            name="Ruby Core API"
+            icon="icons/full/elcl16/rubydoc.gif"
+            category="org.rubypeople.rdt.ui.ruby"
+            class="com.aptana.rdt.internal.ui.infoviews.RubyCoreAPIView"
+            id="com.aptana.rdt.ui.views.RubyCoreAPIView">
+      </view>
+      <view
+            name="Ruby Standard Library API"
+            icon="icons/full/elcl16/rubydoc.gif"
+            category="org.rubypeople.rdt.ui.ruby"
+            class="com.aptana.rdt.internal.ui.infoviews.RubyStdLibAPIView"
+            id="com.aptana.rdt.ui.views.RubyStdLibAPIView">
+      </view>
+      <view
+            category="org.rubypeople.rdt.ui.ruby"
+            class="com.aptana.rdt.ui.gems.GemsView"
+            icon="icons/rubygems.png"
+            id="com.aptana.gems.ui.ViewGems"
+            name="RubyGems"/>
+  </extension>
+  
+  <extension point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension targetID="org.rubypeople.rdt.ui.PerspectiveRuby">
+       <viewShortcut id="com.aptana.rdt.ui.views.RubyStdLibAPIView"/>   
+       <viewShortcut id="com.aptana.rdt.ui.views.RubyCoreAPIView"/> 
+     </perspectiveExtension> 
+   </extension>
+   
+   <extension
+         point="org.rubypeople.rdt.ui.quickFixProcessors">
+      <quickFixProcessor
+            name="%defaultQuickFixProcessor"
+            class="com.aptana.rdt.internal.ui.text.correction.QuickFixProcessor"
+            id="com.aptana.rdt.ui.text.correction.QuickFixProcessor">
+      </quickFixProcessor>
+   </extension>
+   
+    <extension
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="com.aptana.gems.ui.ViewActions"
+            targetID="com.aptana.gems.ui.ViewGems">
+         <action
+               class="com.aptana.rdt.internal.ui.actions.InstallGemActionDelegate"
+               icon="icons/add.gif"
+               id="com.aptana.gems.ui.ActionInstallGem"
+               label="Install"
+               style="push"
+               toolbarPath="additions"
+               tooltip="Install"/>
+         <action
+               class="com.aptana.rdt.internal.ui.actions.RemoveGemActionDelegate"
+               icon="icons/remove.gif"
+               id="com.aptana.gems.ui.ActionRemoveGem"
+               label="Remove"
+               style="push"
+               toolbarPath="additions"
+               enablesFor="1"
+               tooltip="Remove"/>
+         <action
+               class="com.aptana.rdt.internal.ui.actions.RefreshGemsActionDelegate"
+               icon="icons/nav_refresh.gif"
+               id="com.aptana.gems.ui.ActionRefreshGems"
+               label="Refresh"
+               style="push"
+               toolbarPath="additions"
+               tooltip="Refresh"/>
+         <action
+               class="com.aptana.rdt.internal.ui.actions.UpdateGemActionDelegate"
+               icon="icons/ruby_get.png"
+               id="com.aptana.gems.ui.ActionUpdateGem"
+               label="Update Gem"
+               style="push"
+               enablesFor="1"
+               toolbarPath="additions"
+               tooltip="Update Gem"/>
+         <action
+               class="com.aptana.rdt.internal.ui.actions.UpdateAllActionDelegate"
+               icon="icons/upgrade.gif"
+               id="com.aptana.gems.ui.ActionUpdateAllGems"
+               label="Update All Gems"
+               style="push"
+               toolbarPath="additions"
+               tooltip="Update All Gems"/>
+      </viewContribution>
+   </extension>
+   
+     <extension
+         point="org.eclipse.ui.startup">
+      <startup class="com.aptana.rdt.ui.RubyGemsInitializer"/>
+   </extension>
+</plugin>

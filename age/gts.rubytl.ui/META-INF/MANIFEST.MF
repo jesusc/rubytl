@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RubyTL UI Plug-in
+Bundle-SymbolicName: gts.rubytl.ui; singleton:=true
+Bundle-Version: 0.4.0
+Bundle-Activator: gts.rubytl.ui.RubytlPlugin
+Bundle-Vendor: GTS Univ. Murcia
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui.ide,
+ gts.eclipse.core,
+ gts.rubytl.core,
+ org.rubypeople.rdt.ui,
+ org.eclipse.core.filebuffers
+Eclipse-LazyStart: true
+Export-Package: gts.rubytl.ui,
+ gts.rubytl.ui.i18n,
+ gts.rubytl.ui.preferences,
+ gts.rubytl.ui.wizards

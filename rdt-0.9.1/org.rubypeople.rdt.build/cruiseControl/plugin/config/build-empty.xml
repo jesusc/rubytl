@@ -1,0 +1,5 @@
+<project name="build-RDT" default="build">
+        <target name="build-RDT">
+        	<echo message="Building"/>
+        </target>
+</project>

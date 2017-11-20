@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GTS Core Plug-in
+Bundle-SymbolicName: gts.eclipse.core
+Bundle-Version: 0.4.0
+Bundle-Activator: gts.eclipse.core.CorePlugin
+Bundle-Vendor: GTS
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources
+Eclipse-LazyStart: true
+Export-Package: gts.eclipse.core,
+ gts.eclipse.core.resources

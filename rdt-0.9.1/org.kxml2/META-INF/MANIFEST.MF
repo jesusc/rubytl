@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Plugin.name
+Bundle-SymbolicName: org.kxml2; singleton:=true
+Bundle-Version: 0.9.1
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Eclipse-LazyStart: true
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.xmlpull.v1

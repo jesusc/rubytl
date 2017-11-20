@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         id="rubytlnature"
+         name="RubyTL Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run class="gts.rubytl.core.RubytlNature" />
+      </runtime>
+   </extension>
+
+  <extension point="org.eclipse.emf.ecore.uri_mapping">
+    <mapping
+       source="http://gts.inf.um.es/rubytl/trace"
+       target="platform:/plugin/gts.rubytl.core/lib/rubytl/lib/rubytl/models/Trace.ecore">
+    </mapping>
+  </extension>
+<!--
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IProject"
+            nameFilter="*"
+            id="gts.rubytl.core.contribution1">
+         <action
+               label="Add/Remove RubyTL Nature"
+               class="gts.rubytl.core.ToggleNatureAction"
+               menubarPath="additions"
+               enablesFor="+"
+               id="gts.rubytl.core.addRemoveNatureAction">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         id="xmlProblem"
+         name="XML Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+-->
+</plugin>

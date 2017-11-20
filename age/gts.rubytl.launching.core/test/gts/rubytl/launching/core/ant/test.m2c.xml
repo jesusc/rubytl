@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<project name="TestTask" default="main" basedir="../data/class2table">
+
+  <target name="declare">
+    <taskdef name="rubytl.m2c"
+        classname="gts.rubytl.launching.core.ant.M2CTask"
+        classpath="/home/jesus/usr/eclipse-age-dev-3.3/workspace/gts.rubytl.launching.core/bin"/>
+  </target>
+
+  <target name="main" depends="declare">
+	<rubytl.m2c ruby="ruby" rubytl="/home/jesus/usr/dltk/workspace/rubytl">
+		<transformation path="class.2code" />
+		<codebase       path="/tmp" />
+	    <source>
+     		<model     path="source.xmi" />
+      		<namespace name="ClassM" metamodel="ClassM.ecore" />
+	    </source>
+	</rubytl.m2c>
+  </target>
+</project>

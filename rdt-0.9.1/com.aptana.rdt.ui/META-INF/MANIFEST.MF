@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Aptana RDT UI Extensions
+Bundle-SymbolicName: com.aptana.rdt.ui;singleton:=true
+Bundle-Version: 0.0.0
+Bundle-Activator: com.aptana.rdt.ui.AptanaRDTUIPlugin
+Bundle-Vendor: Aptana, Inc.
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.rubypeople.rdt.core,
+ com.aptana.rdt,
+ org.rubypeople.rdt.ui,
+ org.rubypeople.rdt.launching,
+ org.jruby,
+ org.rubypeople.rdt.refactoring
+Eclipse-LazyStart: true
+Export-Package: com.aptana.rdt.internal.ui.preferences

@@ -1,0 +1,23 @@
+<project name="allElements delegation and assemble customTargets.xml">
+<!-- FILE WILL BE OVERWRITTEN WHEN GENERATED -->
+  	<target name="allElementsExceptSvnFetch" unless="is.svn.fetch">
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.rubypeople.rdt" />
+		</ant>		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.rubypeople.rdt-tests" />
+		</ant>
+    </target>
+     
+	<target name="assemble.org.rubypeople.rdt">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}">
+			<property name="zipargs" value="" />
+		</ant>
+	</target>	<target name="assemble.org.rubypeople.rdt-tests">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}">
+			<property name="zipargs" value="" />
+		</ant>
+	</target>
+
+</project>

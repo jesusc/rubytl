@@ -1,0 +1,3 @@
+begin=293
+end=566
+expected=CallNode, CallNode, InstVarNode, IterNode, DAsgnNode, BlockNode, NewlineNode, IfNode, NotNode, CallNode, DVarNode, ArrayNode, SymbolNode, AttrAssignNode, DVarNode, ArrayNode, SymbolNode, CallNode, ConstNode, NewlineNode, IfNode, CallNode, CallNode, LocalVarNode, ArrayNode, CallNode, DVarNode, ArrayNode, SymbolNode, ArrayNode, CallNode, InstVarNode, ArrayNode, InstVarNode, BlockNode, NewlineNode, CallNode, ConstNode, ArrayNode, DStrNode, StrNode, EvStrNode, NewlineNode, CallNode, DVarNode, StrNode, NewlineNode, CallNode, DVarNode, ArrayNode, CallNode, ConstNode, ArrayNode, LocalVarNode

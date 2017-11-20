@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ant.core.antTasks">
+      <antTask
+            class="gts.rubytl.launching.core.ant.M2MTask"
+            eclipseRuntime="true"
+            library="lib/rubytlAnt.jar"
+            name="age.m2m">
+      </antTask>
+      <antTask
+            class="gts.rubytl.launching.core.ant.RakefileTask"
+            eclipseRuntime="true"
+            library="lib/rubytlAnt.jar"
+            name="age.rakefile">
+      </antTask>
+      <antTask
+            class="gts.rubytl.launching.core.ant.M2CTask"
+            eclipseRuntime="true"
+            library="lib/rubytlAnt.jar"
+            name="age.m2c">
+      </antTask>
+      <antTask
+            class="gts.rubytl.launching.core.ant.ConfigureTask"
+            eclipseRuntime="true"
+            library="lib/rubytlAnt.jar"
+            name="age.configure">
+      </antTask>
+   </extension>
+   <extension
+         point="org.eclipse.ant.core.extraClasspathEntries">
+      <extraClasspathEntry
+            eclipseRuntime="true"
+            library="lib/rubytlAnt.jar">
+      </extraClasspathEntry>
+   </extension>
+
+</plugin>

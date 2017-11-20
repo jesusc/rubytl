@@ -1,0 +1,30 @@
+<cruisecontrol>
+	<project name="RDT" buildafterfailed="false">
+		<plugin name="labelincrementer" 
+			classname="org.rubypeople.rdt.cruisecontrol.plugin.EclipsePluginLabelProvider"/> 
+		<labelincrementer prefix="0.5.0"/>
+		
+		<!-- Defines where cruise looks for changes, to decide whether to run the build --> 
+		<modificationset quietperiod="5"> 
+			<alwaysbuild/> 
+		</modificationset>
+
+		<!-- Configures the actual build loop, how often and which build file/target --> 
+		<schedule interval="5"> 
+            <ant antscript="/usr/local/java/jakarta-ant-1.5.1/bin/ant"
+               buildfile="build-empty.xml"
+               target="empty"
+               uselogger="true"
+               usedebug="false"/> 
+		</schedule>
+
+		<!-- more recent versions of CC should use the listener below, instead of 	the currentbuildstatusbootstrapper, currentbuildstatuspublisher combination.  NOTE: Must match filename in CC reporting/jsp - override.properties: user.build.status.file -->
+		<listeners>
+			<currentbuildstatuslistener file="logs/RDT/buildstatus.txt"/>		
+		</listeners>
+
+		<!-- Publishers are run *after* a build completes -->
+		<publishers> 
+		</publishers> 
+	</project> 
+</cruisecontrol>

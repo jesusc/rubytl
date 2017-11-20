@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="gts.age.features"
+      label="AGE Plugins"
+      version="0.4.0"
+      provider-name="gts.inf.um.es">
+
+   <description url="http://gts.inf.um.es/age">
+      Plugins for Agile Generative Environment (AGE)
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.debug.ui"/>
+      <import plugin="org.eclipse.debug.core"/>
+      <import plugin="org.rubypeople.rdt.ui"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.rubypeople.rdt.core"/>
+      <import plugin="org.rubypeople.rdt.debug.ui"/>
+      <import plugin="org.eclipse.ui.console"/>
+      <import plugin="org.rubypeople.rdt.launching"/>
+      <import plugin="org.eclipse.ant.core"/>
+      <import plugin="org.eclipse.core.filebuffers"/>
+      <import plugin="org.eclipse.emf"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.apache.ant"/>
+   </requires>
+
+   <plugin
+         id="gts.eclipse.core"
+         download-size="0"
+         install-size="0"
+         version="0.4.0"
+         unpack="false"/>
+
+   <plugin
+         id="gts.age.ui"
+         download-size="0"
+         install-size="0"
+         version="0.4.0"
+         unpack="false"/>
+
+   <plugin
+         id="gts.rubytl.core"
+         download-size="0"
+         install-size="0"
+         version="0.4.0"
+         unpack="false"/>
+
+   <plugin
+         id="gts.rubytl.debug.ui"
+         download-size="0"
+         install-size="0"
+         version="0.4.0"
+         unpack="false"/>
+
+   <plugin
+         id="gts.rubytl.launching"
+         download-size="0"
+         install-size="0"
+         version="0.4.0"/>
+
+   <plugin
+         id="gts.rubytl.ui"
+         download-size="0"
+         install-size="0"
+         version="0.4.0"
+         unpack="false"/>
+
+   <plugin
+         id="gts.age.jruby"
+         download-size="0"
+         install-size="0"
+         version="0.4.0"
+         unpack="false"/>
+
+   <plugin
+         id="gts.age.preferences"
+         download-size="0"
+         install-size="0"
+         version="0.4.0"
+         unpack="false"/>
+
+   <plugin
+         id="gts.eclipse.emf"
+         download-size="0"
+         install-size="0"
+         version="0.4.0"
+         unpack="false"/>
+
+   <plugin
+         id="gts.rubytl.launching.core"
+         download-size="0"
+         install-size="0"
+         version="0.4.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         id="gts.age.ui.perspectives"
+         name="AGE"
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="gts.age.ui.perspectives.PerspectiveFactory"
+            icon="icons/icon24x24.gif"
+            id="gts.age.ui.perspectives.agePerspective"
+            name="AGE"/>
+   </extension>
+   <extension
+         id="gts.age.mddResources"
+         name="AGE Views"
+         point="org.eclipse.ui.views">
+      <category
+            id="gts.age.ui.ageCategory"
+            name="AGE"/>
+            <!-- name="%ageCategory"/> -->
+      <view
+            category="gts.age.ui.ageCategory"
+            class="gts.age.ui.views.MddResourcesView"
+            icon="icons/icon24x24.gif"
+            id="gts.age.ui.views.ageView"
+            name="AGE Resources"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="gts.age.ui.category"
+            name="AGE"/>
+      <wizard
+            category="gts.age.ui.category"
+            class="gts.age.ui.wizards.NewMetamodelWizard"
+            icon="icons/new_metamodel.gif"
+            id="gts.age.ui.NewMetamodelWizard"
+            name="New Metamodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="gts.age.ui.menu.emof2ecore"
+            nameFilter="*.emof"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="gts.age.ui.age_menu"
+               label="AGE"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="gts.age.ui.popup.actions.Emof2Ecore"
+               enablesFor="1"
+               id="gts.age.ui.newAction"
+               label="Convert from EMOF to Ecore"
+               menubarPath="gts.age.ui.age_menu/group1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="gts.age.ui.menu.ruby2xmi"
+            nameFilter="*.rb"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="gts.age.ui.age_menu"
+               label="AGE"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="gts.age.ui.popup.actions.Ruby2XMI"
+               enablesFor="1"
+               id="gts.age.ui.menu.Ruby2XMI"
+               label="Convert Ruby model to XMI"
+               menubarPath="gts.age.ui.age_menu/group1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="gts.age.ui.menu.ecore2emof"
+            nameFilter="*.ecore"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="gts.age.ui.age_menu"
+               label="AGE"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="gts.age.ui.popup.actions.Ecore2Emof"
+               enablesFor="1"
+               id="gts.age.ui.newAction"
+               label="Convert from Ecore to EMOF"
+               menubarPath="gts.age.ui.age_menu/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

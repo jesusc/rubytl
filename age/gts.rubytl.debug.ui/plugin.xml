@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+<!--
+		<launchConfigurationTypeImage
+        configTypeID="gts.rubytl.launching"
+        icon="icons/rubytl.gif"
+        id="gts.rubytl.debug.ui.launcher.icon">
+	    </launchConfigurationTypeImage>
+-->	    
+  <launchConfigurationTypeImage
+        configTypeID="gts.rubytl.launching.rakefile"
+        icon="icons/execute_rakefile.gif"
+        id="gts.rubytl.debug.ui.launchRakefile"/>
+	</extension>
+	<extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+<!--
+	    <launchConfigurationTabGroup
+	        type="gts.rubytl.launching"
+	        class="gts.rubytl.debug.ui.LauncherTabGroup"
+	        id="gts.rubytl.debug.ui.launchConfigurationTabGroup">
+	    </launchConfigurationTabGroup>
+-->
+     <launchConfigurationTabGroup
+           class="gts.rubytl.debug.ui.LauncherRakefileTabGroup"
+           id="gts.rubytl.debug.ui.launchRakefile"
+           type="gts.rubytl.launching.rakefile">
+        <launchMode
+              mode="run"
+              perspective="gts.age.ui.perspectives.agePerspective">
+        </launchMode>
+     </launchConfigurationTabGroup>
+	</extension>	
+<!--
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+            category="gts.rubytl.ui.preferences.RubyTLPreferences"
+            class="gts.rubytl.debug.ui.preferences.PathPreferencesPage"
+            id="gts.rubytl.debug.ui.preferences.PathPreferencesPage"
+            name="Path preferences"/>
+   </extension>
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="gts.rubytl.debug.ui.preferences.PreferenceInitializer"/>
+   </extension>
+-->   
+   
+   <extension
+         point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+            category="gts.rubytl.launching.rakefile"
+            class="gts.rubytl.debug.ui.RakefileLaunchShortcut"
+            icon="icons/execute_rakefile.gif"
+            id="gts.rubytl.debug.ui.rakefile.shorcut"
+            label="Run rakefile"
+            modes="run">
+         <contextualLaunch>
+         	<enablement>
+				<with variable="selection">
+					<count value="1">
+					</count>
+					<iterate>
+						<or>
+							<test value="*.rake"
+								property="org.eclipse.debug.ui.matchesPattern">
+							</test>
+							<test value="Rakefile"
+								property="org.eclipse.debug.ui.matchesPattern">
+							</test>
+       <test
+             property="org.eclipse.debug.ui.matchesPattern"
+             value="*.rb">
+       </test>
+						</or>
+					</iterate>
+				</with>
+			</enablement>
+         </contextualLaunch>
+      </shortcut>
+   </extension>	
+   <extension point="org.eclipse.debug.ui.consoleLineTrackers">
+		<consoleLineTracker
+			class="gts.rubytl.debug.ui.RubytlConsoleTracker"
+			processType="rubytl"
+			id="gts.rubytl.debug.ui.RubytlConsoleTracker">
+		</consoleLineTracker>
+	</extension>
+   <extension
+         point="org.eclipse.debug.ui.launchGroups">
+      <launchGroup
+            bannerImage="icons/execute_rakefile.gif"
+            category="gts.rubytl.launching.rakefile"
+            id="gts.rubytl.debug.ui.rakefileLaunchGroup"
+            image="icons/execute_rakefile.gif"
+            label="Run rakefile"
+            mode="run"
+            title="Select the rakefile to launch">
+      </launchGroup>
+   </extension>   
+</plugin>

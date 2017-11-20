@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RubyTL Launching Core
+Bundle-SymbolicName: gts.rubytl.launching.core;singleton:=true
+Bundle-Version: 0.4.0
+Bundle-Activator: gts.rubytl.launching.core.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.apache.ant,
+ org.eclipse.ant.core
+Eclipse-LazyStart: true

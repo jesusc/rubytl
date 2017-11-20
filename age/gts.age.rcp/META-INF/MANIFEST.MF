@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AGE RCP Frontend
+Bundle-SymbolicName: gts.age.rcp;singleton:=true
+Bundle-Version: 0.3.2
+Bundle-Activator: gts.age.rcp.Activator
+Bundle-Vendor: gts.inf.um.es
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.ide.application,
+ org.eclipse.core.runtime
+Eclipse-LazyStart: true

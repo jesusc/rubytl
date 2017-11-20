@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="gts.rubytl.launching.core/lib" default="createAntJar">
+	<target name="createAntJar">
+		<jar destfile="rubytlAnt.jar" basedir="../bin_ant"/>
+	</target>
+</project>

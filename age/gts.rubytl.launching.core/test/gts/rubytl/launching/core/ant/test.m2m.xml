@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<project name="TestTask" default="main" basedir="../data/class2table">
+
+  <target name="declare">
+    <taskdef name="rubytl.m2m"
+        classname="gts.rubytl.launching.core.ant.M2MTask"
+    	loaderRef="rubytl"
+        classpath="/home/jesus/usr/eclipse-age-dev-3.3/workspace/gts.rubytl.launching.core/bin"/>
+
+        <taskdef name="rubytl.configure"
+            classname="gts.rubytl.launching.core.ant.ConfigureTask"
+        	loaderRef="rubytl"
+            classpath="/home/jesus/usr/eclipse-age-dev-3.3/workspace/gts.rubytl.launching.core/bin"/>
+  </target>
+
+  <target name="main" depends="declare, configure">
+	<rubytl.m2m configuration="default">
+		<transformation path="class2table.rb" />
+	    <source>
+     		<model     path="source.xmi" />
+      		<namespace name="ClassM" metamodel="ClassM.ecore" />
+	    </source>
+	    <target model="/tmp/target.xmi" namespace="TableM" metamodel="TableM.ecore" />
+	</rubytl.m2m>
+  </target>
+	
+  <target name="configure" depends="declare">
+	<rubytl.configure name="default">
+		<ruby   path="ruby" />
+		<rubytl path="/home/jesus/usr/dltk/workspace/rubytl" />
+
+		<mapping uri="http://some-metamodel" file="metamodels/other.ecore" />
+	</rubytl.configure>
+  </target>
+	
+</project>

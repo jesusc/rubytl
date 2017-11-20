@@ -1,0 +1,20 @@
+<xmi:XMI xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmi:version='2.0' xmlns:xmi='http://www.omg.org/XMI' xmlns:classm='http://gts.inf.um.es/examples/class'>
+  <classm:Class name='Pet'>
+    <attrs name='name' type='#/1' xsi:type='classm:Attribute' is_primary='true'/>
+    <attrs name='age' type='#/5' xsi:type='classm:Attribute'/>
+  </classm:Class>
+  <classm:PrimitiveType name='String'/>
+  <classm:Class name='Person'>
+    <attrs name='pet' type='#/0' xsi:type='classm:Attribute'/>
+    <attrs name='job' type='#/3' xsi:type='classm:Attribute'/>
+    <attrs name='name' type='#/1' xsi:type='classm:Attribute' is_primary='true'/>
+    <attrs name='age' type='#/5' xsi:type='classm:Attribute'/>
+  </classm:Class>
+  <classm:Class name='Job'>
+    <attrs name='name' type='#/1' xsi:type='classm:Attribute' is_primary='true'/>
+    <attrs name='address' type='#/1' xsi:type='classm:Attribute' is_primary='true'/>
+    <attrs name='best_employee' type='#/2' xsi:type='classm:Attribute'/>
+  </classm:Class>
+  <classm:PrimitiveType name='Boolean'/>
+  <classm:PrimitiveType name='Integer'/>
+</xmi:XMI>

@@ -1,0 +1,28 @@
+<project basedir="." default="compile" name="JRuby">
+	<description>
+
+	</description>
+
+	<property name="cruisecontrol.home" value=".."/>
+	<property name="cruisecontrol.libs" value="${cruisecontrol.home}/lib"/>
+	<property name="dest.dir" value="bin"/>
+	
+
+  	<path id="build.classpath">
+    		<fileset dir="${cruisecontrol.libs}" includes="*.jar"/>
+	</path>
+
+	 <target name="compile">
+	 	<mkdir dir="${dest.dir}"/>
+		<javac destdir="${dest.dir}" debug="true">
+			<classpath refid="build.classpath"/>
+			<src path="src"/>
+		</javac>
+	</target>
+
+	<target name="deploy" depends="compile">
+		<copy todir="${cruisecontrol.home}">
+			<fileset dir="${dest.dir}"/>
+		</copy>
+	</target>
+</project>

@@ -1,0 +1,26 @@
+
+main do
+  compose_file 'tables.sql' do |file|        
+  	TableM::Table.all_objects do |table|
+      	apply_template 'templates/create_table.rtemplate', :table => table
+  	end
+  	  
+    TableM::FKey.all_objects do |fkey|
+      	apply_template 'templates/create_fkeys.rtemplate', :fkey => fkey
+  	end
+  end
+end
+
+=begin
+main do 
+  TableM::Table.all_objects do |table|
+  	template_to_file 'templates/create_table.rtemplate' => "#{table.name}.sql", :table => table
+  end
+  
+  compose_file 'alter_tables.sql' do |file|        
+      TableM::FKey.all_objects do |fkey|
+      	apply_template 'templates/create_fkeys.rtemplate', :fkey => fkey
+  	end
+  end
+end
+=end

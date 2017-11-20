@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="gts.age.ui.category"
+            class="gts.rubytl.ui.wizards.NewProjectCreationWizard"
+            descriptionImage="icons/newrprj_wiz.gif"
+            icon="icons/newrprj_wiz.gif"
+            id="gts.rubytl.ui.wizards.NewRubyTLProjectCreationWizard"
+            name="New RubyTL Project"
+            project="true">
+      </wizard>
+      <wizard
+            category="gts.age.ui.category"
+            class="gts.rubytl.ui.wizards.NewTransformationWizard"
+            icon="icons/newtransformation.gif"
+            id="gts.rubytl.ui.wizards.NewTransformationWizard"
+            name="New RubyTL Transformation"/>
+      <wizard
+            category="gts.age.ui.category"
+            class="gts.rubytl.ui.wizards.NewRubySourceModelWizard"
+            icon="icons/newrubymodel.gif"
+            id="gts.rubytl.ui.wizards.NewRubySourceModelWizard"
+            name="New Ruby Source Model"/>
+      <wizard
+            category="gts.age.ui.category"
+            class="gts.rubytl.ui.wizards.NewCodeTemplateWizard"
+            icon="icons/new_template.gif"
+            id="gts.rubytl.ui.wizards.NewCodeTemplateWizard"
+            name="New Code Template"/>
+      <wizard
+            category="gts.age.ui.category"
+            class="gts.rubytl.ui.wizards.NewModelToCodeWizard"
+            icon="icons/new_model2code.gif"
+            id="gts.rubytl.ui.wizards.NewModelToCodeWizard"
+            name="New Model-to-Code Transformation"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.ide.projectNatureImages">
+      <image
+            icon="icons/prj_ovr.gif"
+            id="gts.rubytl.ui.natureimage"
+            natureId="gts.rubytl.core.rubytlnature"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+            class="gts.rubytl.ui.preferences.RubyTLPreferences"
+            id="gts.rubytl.ui.preferences.RubyTLPreferences"
+            name="RubyTL"/>
+   </extension>
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="gts.rubytl.ui.preferences.PreferenceInitializer"/>
+   </extension>	
+   
+   <extension point="org.eclipse.ui.editors.templates">
+      <contextType
+            name="%rubyFile.contextType.name"
+            class="org.rubypeople.rdt.internal.corext.template.ruby.RubyContextType"
+            id="ruby">
+      </contextType>
+      <include
+      		file="templates/rubytl.xml"
+      		translations="$nl$/templates/rubytl.properties">
+      </include>
+   </extension>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+	<content-type
+       base-type="org.rubypeople.rdt.core.rubySource"
+       file-extensions="rbm,2code"
+       id="myId"
+       name="RubyTL transformations"
+       priority="high"/>
+   </extension>
+   <extension
+         point="org.eclipse.core.filebuffers.documentSetup">
+      <participant
+            class="org.rubypeople.rdt.internal.ui.rubyeditor.RubyDocumentSetupParticipant"
+            contentTypeId="org.rubypeople.rdt.core.rubySource"
+            extensions="2code,rbm"/>
+   </extension>   
+</plugin>

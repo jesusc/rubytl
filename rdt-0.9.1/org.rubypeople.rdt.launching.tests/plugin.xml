@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.rubypeople.rdt.launching.tests"
+   name="org.rubypeople.rdt.launching.tests"
+   version="0.0.0">
+
+   <runtime>
+      <library name="rdtlaunchingtests.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime.compatibility"/>
+      <import plugin="org.eclipse.debug.core"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.rubypeople.eclipse.shams"/>
+      <import plugin="org.rubypeople.rdt.launching"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.rubypeople.eclipse.testutils"/>
+      <import plugin="org.rubypeople.rdt.core"/>
+      <import plugin="org.rubypeople.rdt.core.tests"/>
+      <import plugin="org.rubypeople.rdt.debug.core"/>
+   </requires>
+   
+   <extension
+         point="org.rubypeople.rdt.launching.vmInstallTypes">
+      <vmInstallType
+            class="org.rubypeople.rdt.internal.launching.TestVMType"
+            id="org.rubypeople.rdt.launching.TestVMType">
+      </vmInstallType>
+   </extension> 
+
+</plugin>

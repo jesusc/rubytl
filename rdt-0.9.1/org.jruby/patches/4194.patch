@@ -1,0 +1,55 @@
+Index: C:/Users/Chris Williams/workspace/jruby_trunk/.project
+===================================================================
+--- C:/Users/Chris Williams/workspace/jruby_trunk/.project	(revision 3967)
++++ C:/Users/Chris Williams/workspace/jruby_trunk/.project	(working copy)
+@@ -6,6 +6,11 @@
+ 	</projects>
+ 	<buildSpec>
+ 		<buildCommand>
++			<name>org.rubypeople.rdt.core.rubybuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
+ 			<name>org.eclipse.jdt.core.javabuilder</name>
+ 			<arguments>
+ 			</arguments>
+@@ -24,5 +29,6 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.eclipse.team.cvs.core.cvsnature</nature>
++		<nature>org.rubypeople.rdt.core.rubynature</nature>
+ 	</natures>
+ </projectDescription>
+Index: C:/Users/Chris Williams/workspace/jruby_trunk/src/org/jruby/lexer/yacc/RubyYaccLexer.java
+===================================================================
+--- C:/Users/Chris Williams/workspace/jruby_trunk/src/org/jruby/lexer/yacc/RubyYaccLexer.java	(revision 4194)
++++ C:/Users/Chris Williams/workspace/jruby_trunk/src/org/jruby/lexer/yacc/RubyYaccLexer.java	(working copy)
+@@ -1408,7 +1408,7 @@
+ 
+             default:
+                 if (!isIdentifierChar(c)) {
+-                    throw new SyntaxException(getPosition(), "Invalid char `\\" + Integer.parseInt(""+c, 8) + "' in expression");
++                    throw new SyntaxException(getPosition(), "Invalid char `\\" + Character.getNumericValue((int)c) + "' in expression");
+                 }
+             
+                 tokenBuffer.setLength(0);
+Index: C:/Users/Chris Williams/workspace/jruby_trunk/src/org/jruby/ast/visitor/rewriter/ReWriteVisitor.java
+===================================================================
+--- C:/Users/Chris Williams/workspace/jruby_trunk/src/org/jruby/ast/visitor/rewriter/ReWriteVisitor.java	(revision 4194)
++++ C:/Users/Chris Williams/workspace/jruby_trunk/src/org/jruby/ast/visitor/rewriter/ReWriteVisitor.java	(working copy)
+@@ -790,6 +790,14 @@
+ 	}
+ 
+ 	public Instruction visitFixnumNode(FixnumNode iVisited) {
++        ISourcePosition pos = iVisited.getPosition();
++        if (pos != null && config.getSource() != null && config.getSource().length() > pos.getEndOffset()) {
++            String raw = config.getSource().substring(pos.getStartOffset(), pos.getEndOffset());
++            if (raw != null) {
++                print(raw);
++                return null;
++            }
++        }
+ 		print(iVisited.getValue());
+ 		return null;
+ 	}

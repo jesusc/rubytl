@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="RubyTL" url="http://sanchezcuadrado.es/projects/rubytl/updatesite">
+      Update site for RubyTL and the AGE environment
+   </description>
+   <feature url="features/gts.age.features_0.4.0.jar" id="gts.age.features" version="0.4.0">
+      <category name="AGE Plugins"/>
+   </feature>
+   <feature url="features/gts.age.rdt_patched_0.9.1.jar" id="gts.age.rdt_patched" version="0.9.1">
+      <category name="AGE Plugins"/>
+   </feature>
+   <category-def name="AGE Plugins" label="AGE Plugins"/>
+</site>

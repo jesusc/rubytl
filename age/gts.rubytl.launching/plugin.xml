@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+<!--
+		<launchConfigurationType id="gts.rubytl.launching"
+								delegate="gts.rubytl.launching.LauncherLaunchConfigurationDelegate"
+								modes="run,debug"
+								name="RubyTL">
+
+			<fileExtension extension="txt" default="true" />
+		</launchConfigurationType>
+-->		
+  <launchConfigurationType
+        delegate="gts.rubytl.launching.LauncherRakefileDelegate"
+        id="gts.rubytl.launching.rakefile"
+        modes="run,debug"
+        name="RubyTL Rakefile"
+        sourceLocatorId="org.rubypeople.rdt.debug.ui.rubySourceLocator"/>
+   </extension>
+
+
+</plugin>

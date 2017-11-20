@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AGE Perspective Plug-in
+Bundle-SymbolicName: gts.age.ui;singleton:=true
+Bundle-Version: 0.4.0
+Bundle-Activator: gts.age.ui.perspectives.PerspectivePlugin
+Bundle-Vendor: GTS
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.views,
+ org.eclipse.ui.ide,
+ org.eclipse.debug.ui,
+ org.eclipse.core.resources,
+ gts.rubytl.launching,
+ gts.eclipse.emf,
+ gts.eclipse.core
+Eclipse-LazyStart: true

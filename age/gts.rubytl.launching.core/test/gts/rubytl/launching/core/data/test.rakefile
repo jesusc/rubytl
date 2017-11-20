@@ -1,0 +1,4 @@
+
+task :test do	
+	puts "ok"
+end

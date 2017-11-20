@@ -1,0 +1,13 @@
+Index: src/org/jruby/lexer/yacc/RubyYaccLexer.java
+===================================================================
+--- src/org/jruby/lexer/yacc/RubyYaccLexer.java	(revision 3967)
++++ src/org/jruby/lexer/yacc/RubyYaccLexer.java	(working copy)
+@@ -1408,7 +1408,7 @@
+ 
+             default:
+                 if (!isIdentifierChar(c)) {
+-                    throw new SyntaxException(getPosition(), "Invalid char `\\" + Integer.parseInt(""+c, 8) + "' in expression");
++                    throw new SyntaxException(getPosition(), "Invalid char `\\" + Character.getNumericValue(c) + "' in expression");
+                 }
+             
+                 tokenBuffer.setLength(0);

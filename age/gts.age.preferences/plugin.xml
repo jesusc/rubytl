@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.3"?>
+<plugin>
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class='gts.age.preferences.PreferenceInitializer'/>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+      <page category='gts.rubytl.ui.preferences.RubyTLPreferences' 
+            class='gts.age.preferences.PathOptions'
+            id='gts.age.preferences.PathOptions'
+            name='Path options' />
+   </extension>
+</plugin>

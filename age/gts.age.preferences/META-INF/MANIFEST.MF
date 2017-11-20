@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AGE Preferences Plug-in
+Bundle-SymbolicName: gts.age.preferences;singleton:=true
+Bundle-Version: 0.4.0
+Bundle-Activator: gts.age.preferences.PreferencesPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Eclipse-LazyStart: true
+Export-Package: gts.age.preferences;
+  uses:="org.eclipse.jface.preference,
+   org.eclipse.core.runtime.preferences,
+   org.osgi.framework,
+   org.eclipse.ui.plugin,
+   org.eclipse.ui"
