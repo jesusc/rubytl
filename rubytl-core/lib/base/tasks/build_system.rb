@@ -47,6 +47,8 @@ module RubyTL
       end
 
       def load_rakefile(rakefile)
+        self.extend Rake::DSL
+
         eval(rakefile.read, nil, rakefile.file_path)
         true
       rescue RubyTL::BaseError => e
