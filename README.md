@@ -28,6 +28,10 @@ Tested with:
 
 You can also watch the [Introductory Screencast](http://gts.inf.um.es/trac/age/wiki/Screencasts) Introductory Screencast to see the steps.
 
+## Tutorial
+
+A tutorial of the original version of RubyTL, which is still mostly valid. [Here](http://gts.inf.um.es/trac/age/chrome/site/tutorial.pdf)
+
 ## Examples
 
 Here are a few examples to try RubyTL.
